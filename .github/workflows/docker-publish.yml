@@ -34,7 +34,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: name/app:latest
+          tags: lipigab/eon-mqtt:latest
       -
         # Push the new release
         name: Build and Push New Release
