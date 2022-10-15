@@ -90,9 +90,9 @@ def main():
     hyphen = os.getenv('EON_HYPHEN')
 
     if not since:
-        since = (datetime.now() + timedelta(days=-2)).strftime('%Y-%m-%d')
+        since = (datetime.now() + timedelta(days=-1)).strftime('%Y-%m-%d')
     if not until:
-        until = (datetime.now() + timedelta(days=-1)).strftime('%Y-%m-%d')
+        until = (datetime.now() + timedelta(days=-0)).strftime('%Y-%m-%d')
 
     params = {
         "page": 1,
