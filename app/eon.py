@@ -60,7 +60,7 @@ def main():
     mqtt_topic = os.getenv('MQTT_TOPIC', MQTT_TOPIC_DEFAULT)
 
     session = requests.Session()
-    response = session.get(ACCOUNT_URL, verify=True)
+    response = session.get(ACCOUNT_URL, verify=False)
     if response.status_code != 200:
         raise Exception(
             f"Failed to get access token, HTTP status code={response.status_code}")
@@ -79,7 +79,7 @@ def main():
     header = {"Content-Type": "application/x-www-form-urlencoded"}
     log(f"Login into E.ON portal")
     response = session.post(ACCOUNT_URL, data=body_data,
-                            headers=header, verify=True)
+                            headers=header, verify=False)
     if response.status_code != 200:
         raise Exception(
             f"Failed to login, HTTP status code={response.status_code}")
